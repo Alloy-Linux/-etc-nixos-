@@ -69,7 +69,7 @@ in
     extraSpecialArgs = { inherit inputs; };
     users = {
     	user = import ./home.nix;
-    }
+    };
   };
   
   # default browser

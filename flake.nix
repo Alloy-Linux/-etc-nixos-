@@ -15,6 +15,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
+        ./flatpak.nix
         inputs.home-manager.nixosModules.default
       ];
     };
