@@ -35,4 +35,6 @@
   networking.firewall.enable = true;
 
   # Boot config here.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 }
