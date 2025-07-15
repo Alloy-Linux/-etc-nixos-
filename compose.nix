@@ -1,5 +1,5 @@
 # Core NixOS configuration applied to all profiles
-{ pkgs, settings, ... }:
+{ lib, pkgs, settings, ... }:
 {
   # System basics
   networking.hostName = "alloy-linux";
@@ -24,7 +24,7 @@
   # Main user account
   users.users.user = {
     isNormalUser = true;
-    description = settings.account.name;
+    description = "";
     extraGroups = [ "networkmanager" "wheel" ]; # network + sudo access
     uid = 1000;
     shell = pkgs.bash;
@@ -32,7 +32,10 @@
 
   # Enable zram swap and firewall
   services.zram-generator.enable = true;
+
   networking.firewall.enable = true;
+  networking.networkmanager.enable = true;
+  networking.wireless.enable = lib.mkForce false;
 
   # Boot config here.
   boot.loader.systemd-boot.enable = true;

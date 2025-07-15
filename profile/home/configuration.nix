@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ];
+  imports = [ ../../modules/desktop/gnome.nix ];
   boot.kernelPackages = pkgs.linuxPackages;
   boot.kernelParams = [ ];
   boot.blacklistedKernelModules = [ ];
