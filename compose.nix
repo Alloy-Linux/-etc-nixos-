@@ -1,5 +1,5 @@
 # Core NixOS configuration applied to all profiles
-{ lib, pkgs, settings, ... }:
+{ lib, pkgs, ... }:
 {
   # System basics
   networking.hostName = "alloy-linux";
@@ -25,6 +25,7 @@
   users.users.user = {
     isNormalUser = true;
     description = "";
+    password = "alloy";
     extraGroups = [ "networkmanager" "wheel" ]; # network + sudo access
     uid = 1000;
     shell = pkgs.bash;
